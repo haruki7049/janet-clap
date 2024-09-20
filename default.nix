@@ -1,8 +1,8 @@
 {
   pkgs ? import <nixpkgs> { },
   buildJanetPackage-source ? builtins.fetchTarball {
-    url = "https://github.com/haruki7049/buildJanetPackage/archive/420fb441d7e57c4ee8cd1ecd575ab3032d27f7cc.tar.gz";
-    sha256 = "0cl8496jafi9h39y7zk5cda82g7mz0dd703i0h7dzg2gvxd945jf";
+    url = "https://github.com/haruki7049/buildJanetPackage/archive/9bfdf0ba39651a146ccb022bcadd81ff60499209.tar.gz";
+    sha256 = "1rnjh86sacqrzzx68ah408g5wdma3vfh4y104g8ksgqpdmqnq6y2";
   },
 }:
 

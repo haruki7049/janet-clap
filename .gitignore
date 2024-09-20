@@ -1,0 +1,11 @@
+# Janet's dependencies' directory
+jpm_tree/
+
+# Janet build directory
+build/
+
+# Nix's result
+result
+
+# nix-direnv
+.direnv/
