@@ -1,0 +1,1 @@
+# memo (def cli-args {:options {:help {:short true :long true :help-message "This is help message"} :version {:long true :help-message "This is a message for version option"}} :usage "This is a test usage message"})
