@@ -1,5 +1,5 @@
 (declare-project
- :name "deps-parser")
+ :name "janet-clap")
 
 (declare-source
  :prefix "janet-clap"
