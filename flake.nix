@@ -7,6 +7,7 @@
       url = "github:haruki7049/buildJanetPackage";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    janet-fmt.url = "github:haruki7049/janet-fmt";
   };
 
   outputs =
@@ -20,7 +21,7 @@
         inputs.treefmt-nix.flakeModule
       ];
       perSystem =
-        { pkgs, ... }:
+        { pkgs, system, ... }:
         let
           janet-clap = pkgs.callPackage ./. { buildJanetPackage-source = inputs.buildJanetPackage; };
         in
@@ -49,6 +50,7 @@
             packages = [
               # Nix
               pkgs.nil
+              inputs.janet-fmt.packages.${system}.default
 
               # Janet
               pkgs.janet
