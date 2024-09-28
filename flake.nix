@@ -3,11 +3,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     treefmt-nix.url = "github:numtide/treefmt-nix";
-    buildJanetPackage = {
-      url = "github:haruki7049/buildJanetPackage";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    janet-fmt.url = "github:haruki7049/janet-fmt";
   };
 
   outputs =
@@ -22,9 +17,6 @@
       ];
       perSystem =
         { pkgs, system, ... }:
-        let
-          janet-clap = pkgs.callPackage ./. { buildJanetPackage-source = inputs.buildJanetPackage; };
-        in
         {
           treefmt = {
             projectRootFile = "flake.nix";
@@ -37,20 +29,10 @@
             ];
           };
 
-          checks = {
-            inherit janet-clap;
-          };
-
-          packages = {
-            inherit janet-clap;
-            default = janet-clap;
-          };
-
           devShells.default = pkgs.mkShell {
             packages = [
               # Nix
               pkgs.nil
-              inputs.janet-fmt.packages.${system}.default
 
               # Janet
               pkgs.janet
